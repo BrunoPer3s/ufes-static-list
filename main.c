@@ -44,10 +44,14 @@ void imprimeLista(Lista* l) {
 }
 
 void removerElemento(Lista* l, int i) {
- if(!estaVazia) {
- 
+ if(i >= 1 && i < (l->n)) {
+   for(int z = i; z < (l->n); z++) {
+     l->itens[z-1] = l->itens[z];
+   }
+
+   l->n--;
  } else {
-     printf()	 
+     printf("Posição Inválida\n");	 
  }
 }
 
@@ -58,6 +62,11 @@ inserirElemento(lista, 1);
 inserirElemento(lista, 2);
 inserirElemento(lista, 3);
 imprimeLista(lista);
+removerElemento(lista, 1);
+imprimeLista(lista);
+
+return 0;
+
 
 return 0;
 }
